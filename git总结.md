@@ -1,18 +1,18 @@
-### CIT
+# CIT
 
-# 1、安装git
+### 1、安装git
 
-# 2、创建用户名和邮箱
+### 2、创建用户名和邮箱
 
 - git  config  --gloabal user.name "lau0400810121"
 
 - git  config  --gloabal user.email "lau0400810121@163.com"
 
-# 3、建立版本仓库
+### 3、建立版本仓库
 
 - git init
 
-# 4、在仓库的工作区创建文件、添加到缓存区、提交到版本仓库
+### 4、在仓库的工作区创建文件、添加到缓存区、提交到版本仓库
 
 - vim 1.php  创建
 
@@ -24,7 +24,7 @@
 
 - git commit -m '版本修改说明'
 
-# 5、版本回退
+### 5、版本回退
 
 - git log 查看所有的版本信息
 
@@ -36,7 +36,7 @@
 
 - git reflog 查看版本操作命令（方便进行版本回到未来的操作）
 
-# 6、撤销工作区内容的修改（在commit之前）
+### 6、撤销工作区内容的修改（在commit之前）
 
 - (已经add但没有提交)
 
@@ -50,7 +50,7 @@
 
 - 但一旦提交到了版本仓库了之后，那就使用 git rest --hard 版本ID 来实现版本的回退，尽量不要托管到远程仓库再进行修改
 
-# 总结：
+### 总结：
 
 - 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
 
@@ -58,14 +58,14 @@
 
 - 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
 
-# 7、删除文件
+### 7、删除文件
 
 - 先在本地文件管理目录进行删除  git rm 1.php 然后提交到版本仓库 git commit -m 'delete 1.php'  实现本地和版本仓库的一致性
 
 - 撤回删除  git checkout --  1.php
 
 
-# 8、远程仓库
+### 8、远程仓库
 
 第1步：生成秘钥文件
 
@@ -80,7 +80,7 @@
 第3步：团队开发，添加多个ssh key
 
 
-# 9、添加远程仓库
+### 9、添加远程仓库
 
 - 在github上创建一个新的仓库，假设仓库名称为study
 
@@ -97,7 +97,7 @@
 - git push origin master   推送到GitHub
 
 
-# 10、从远程库中克隆
+### 10、从远程库中克隆
 
 - 在github上创建一个新的版本仓库，命名为mygit
 
@@ -108,7 +108,7 @@
 - 然后在本地的mygit库中查看同步的文件
 
 
-# 11、分支
+### 11、分支
 
 - 创建并切换到新分支  git checkout -b dev
 
@@ -127,7 +127,7 @@
 git branch -d dev
 
 
-# 12、冲突解决
+### 12、冲突解决
 
 - 1）当在一个分支上修改一个文件提交到分支版本库时，同时主分支也进行修改该文件并进行提交，
 
@@ -140,7 +140,7 @@ git branch -d dev
 - 4）git log --graph --pretty=oneline --abbrev-commit 可以看到分支合并图
 
 
-# 13、分支处理策略
+### 13、分支处理策略
 
 - master分支只作为发布版本，平时不在上面操作
 
@@ -149,7 +149,7 @@ git branch -d dev
 - git merge --no-ff -m "merge with no-ff" dev
 
 
-# 14、BUG分支
+### 14、BUG分支
 
 - 假定手头有分工作正在dev分支上操作，但是没有完成，但此时需要修复BUG
 
@@ -178,13 +178,13 @@ git branch -d dev
 - git stash pop
 
 
-# 15、强行删除（一个未合并的）分支
+### 15、强行删除（一个未合并的）分支
 
 - git branch -D feature-vulca
 
 
 
-# 16、多人操作
+### 16、多人操作
 
 - 查看远程仓库  git remote  -v
 
@@ -202,7 +202,7 @@ git branch -d dev
 
 
 
-# 17 多人协作开发---多人协作的工作模式通常是这样：
+### 17 多人协作开发---多人协作的工作模式通常是这样：
 
 - 首先，可以试图用git push origin branch-name推送自己的修改；
 
@@ -215,7 +215,7 @@ git branch -d dev
 - 如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream branch-name origin/branch-name
 
 
-# 18、打标签方面更好的查找，比版本ID更容易记
+### 18、打标签方面更好的查找，比版本ID更容易记
 
 - 在指定分支上添加标签  git  tag v1.0
 
@@ -228,16 +228,16 @@ git branch -d dev
 - 查看标签信息 git show v0.1
 
 
-# 删除标签 git tag -d v0.1
+### 删除标签 git tag -d v0.1
 - 推送标签到远程  git push origin v0.1
 - git push origin  --tags
 
-# 删除已经推送到远程的标签
+### 删除已经推送到远程的标签
 -先在本地删除  git tag -d v0.1
 - 再删除远程  git push origin :refs/tags/v0.1
 
 
-# 19、搭建git服务器
+### 19、搭建git服务器
 
 - 第一步，安装git
 - yum -y install git
