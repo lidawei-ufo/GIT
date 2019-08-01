@@ -1,4 +1,4 @@
-# GIT [生命不止折腾不息]
+### GIT [生命不止折腾不息]
 - [GIT](https://github.com/lidawei-ufo/GIT)
 
   - [git小结](https://github.com/lidawei-ufo/GIT/blob/master/git%E5%B0%8F%E7%BB%93.md)
